@@ -44,21 +44,22 @@ const Navbar = () => {
               <motion.a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                whileHover={{ y: -2 }}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="relative text-sm text-muted-foreground px-2 py-1 rounded-md transition-all duration-300 hover:text-white hover:bg-blue-600 hover:shadow-md hover:-translate-y-[2px]"
               >
                 {item}
               </motion.a>
             ))}
-            <Button
-              size="sm"
-              className="bg-gradient-to-r from-blue-700 to-blue-800 text-white hover:scale-105 transition-all duration-300 ease-in-out"
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=pabloftavares460@gmail.com&su=Olá%20Pablo!&body=Gostaria%20de%20conversar%20sobre%20um%20projeto."
+              className="hover:text-red-500 transition-all duration-300 transform hover:-translate-y-1"
             >
-              Contratar
-            </Button>
+              <Button
+                size="sm"
+                className="bg-gradient-to-r from-blue-700 to-blue-800 text-white hover:scale-105 transition-all duration-300 ease-in-out"
+              >
+                Contratar
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -91,11 +92,11 @@ const Navbar = () => {
               </a>
             ))}
             <Button
-  className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:opacity-90 transition-all duration-300"
-  onClick={openWhatsApp}
->
-  Contratar
-</Button>
+              className="w-full bg-gradient-to-r from-blue-700 to-blue-800 text-white hover:scale-105 transition-all duration-300 ease-in-out whitespace-nowrap"
+              onClick={openWhatsApp}
+            >
+              Contratar
+            </Button>
           </motion.div>
         )}
       </div>

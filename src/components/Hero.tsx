@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowDown } from "lucide-react";
-import {  FaReact } from "react-icons/fa6";
-import { RiPhpFill } from "react-icons/ri";;
+import { FaReact } from "react-icons/fa6";
+import { RiPhpFill } from "react-icons/ri";
 import { SiNextdotjs } from "react-icons/si";
 import { FaLaravel } from "react-icons/fa";
 import { BiLogoPostgresql } from "react-icons/bi";
@@ -30,9 +30,7 @@ const Hero = () => {
 
     const timeout = setTimeout(() => {
       setDisplayText((prev) =>
-        isDeleting
-          ? prev.slice(0, -1)
-          : currentWord.slice(0, prev.length + 1)
+        isDeleting ? prev.slice(0, -1) : currentWord.slice(0, prev.length + 1)
       );
 
       if (!isDeleting && displayText === currentWord) {
@@ -47,21 +45,23 @@ const Hero = () => {
   }, [displayText, isDeleting, currentWordIndex]);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      <div className="absolute inset-0 animate-grid"></div>
-      <div className="container mx-auto px-4 z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+    <section className="relative min-h-[85vh] md:min-h-screen flex flex-col justify-center items-center overflow-hidden pt-20 pb-10 px-5 sm:px-8">
+      <div className="absolute inset-0 animate-grid opacity-10"></div>
+
+      <div className="container mx-auto z-10">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center max-w-6xl mx-auto">
+          {/* TEXTO PRINCIPAL */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-6"
+            className="space-y-6 text-center md:text-left"
           >
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-4xl md:text-6xl font-bold tracking-tight mt-5"
+              className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight leading-tight mt-3"
             >
               Sou um desenvolvedor{" "}
               <span className="text-gradient glow-text">
@@ -74,7 +74,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="flex gap-3 flex-wrap"
+              className="flex flex-wrap justify-center md:justify-start gap-3"
             >
               {techStack.map((tech, index) => {
                 const Icon = tech.icon;
@@ -99,7 +99,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.8 }}
-              className="text-base md:text-lg text-muted-foreground"
+              className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed"
             >
               Adoro escrever código que leva as coisas ao próximo nível,
               criando aplicações web e mobile de alta performance, integrações
@@ -112,7 +112,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.8 }}
-              className="text-sm md:text-base text-muted-foreground"
+              className="text-xs sm:text-sm md:text-base text-muted-foreground"
             >
               Estou sempre ansioso para aprender e explorar novas tecnologias.
               Atualmente estudando{" "}
@@ -125,37 +125,48 @@ const Hero = () => {
               </span>.
             </motion.p>
 
+            {/* BOTÕES + HOBBIES */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.8 }}
-              className="flex flex-row flex-nowrap items-center gap-3 pt-4 "
+              className="flex flex-col sm:flex-row flex-wrap justify-center md:justify-start items-center gap-3 pt-4"
             >
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-blue-700 to-blue-800 text-white hover:scale-105 transition-all duration-300 ease-in-out whitespace-nowrap"
+              <a
+                href="https://wa.me/5583986669294?text=Olá%20Pablo,%20gostaria%20de%20conversar%20sobre%20um%20projeto!"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Vamos Trabalhar Juntos
-              </Button>
+                <Button
+                  size="lg"
+                  className="w-full sm:w-auto bg-gradient-to-r from-blue-700 to-blue-800 text-white hover:scale-105 transition-all duration-300 ease-in-out whitespace-nowrap"
+                >
+                  Vamos Trabalhar Juntos
+                </Button>
+              </a>
+
               <Button
                 size="lg"
                 variant="outline"
-                className="glass border-primary/20 text-white hover:border-primary/60 hover:bg-primary/10 hover:text-white hover:scale-105 transition-all duration-300 ease-in-out whitespace-nowrap"
+                className="w-full sm:w-auto glass border-primary/20 text-white hover:border-primary/60 hover:bg-primary/10 hover:text-white hover:scale-105 transition-all duration-300 ease-in-out whitespace-nowrap"
               >
                 Currículo
               </Button>
 
-              {hobbies.map((hobby) => (
-                <Badge
-                  key={hobby}
-                  className="glass border-accent/30 text-accent px-3 py-1 text-xs whitespace-nowrap hover:scale-105 transition-all duration-300 ease-in-out"
-                >
-                  {hobby}
-                </Badge>
-              ))}
+              <div className="flex flex-wrap justify-center md:justify-start gap-2 pt-2">
+                {hobbies.map((hobby) => (
+                  <Badge
+                    key={hobby}
+                    className="glass border-accent/30 text-accent px-3 py-1 text-xs whitespace-nowrap hover:scale-105 transition-all duration-300 ease-in-out"
+                  >
+                    {hobby}
+                  </Badge>
+                ))}
+              </div>
             </motion.div>
           </motion.div>
 
+          {/* BLOCO DE CÓDIGO (SOME NO MOBILE) */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
@@ -207,7 +218,6 @@ const Hero = () => {
                 </div>
                 <div className="flex">
                   <span className="text-muted-foreground mr-4">6</span>
-                  <span></span>
                 </div>
                 <div className="flex">
                   <span className="text-muted-foreground mr-4">7</span>
@@ -238,11 +248,12 @@ const Hero = () => {
           </motion.div>
         </div>
 
+        {/* SETA PARA BAIXO */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.4, duration: 1 }}
-          className="pt-9 flex justify-center"
+          className="pt-10 flex justify-center"
         >
           <ArrowDown className="w-6 h-6 text-muted-foreground animate-bounce" />
         </motion.div>

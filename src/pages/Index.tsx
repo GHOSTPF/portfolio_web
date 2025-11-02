@@ -15,11 +15,19 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
-        <About />
+         <section id="sobre">
+          <About />
+        </section>
         {/* <CodeSnippet /> */}
-        <Projects />
-        <Skills />
-        <Contact />
+        <section id="projetos">
+          <Projects />
+        </section>
+        <section id="skills">
+          <Skills />
+        </section>
+        <section id="contato">
+          <Contact />
+        </section>
       </main>
       <footer className="flex items-center justify-between border-t border-primary/20 px-6 py-4 text-muted-foreground">
         <div className="flex items-center gap-3">
@@ -51,7 +59,7 @@ const Index = () => {
           </a>
 
           <a
-            href="mailto:pabloftavares460@gmail.com"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=pabloftavares460@gmail.com&su=Olá%20Pablo!&body=Gostaria%20de%20conversar%20sobre%20um%20projeto."
             className="hover:text-red-500 transition-all duration-300 transform hover:-translate-y-1"
           >
             <Mail className="w-5 h-5" />
