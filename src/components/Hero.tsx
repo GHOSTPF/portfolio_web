@@ -46,7 +46,7 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-[85vh] md:min-h-screen flex flex-col justify-center items-center overflow-hidden pt-20 pb-10 px-5 sm:px-8">
-      <div className="absolute inset-0 animate-grid opacity-10"></div>
+      <div className="absolute inset-0 animate-grid "></div>
 
       <div className="container mx-auto z-10">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center max-w-6xl mx-auto">
