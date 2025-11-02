@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Github, Linkedin, Twitter } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Contact = () => {
   return (
@@ -25,45 +26,51 @@ const Contact = () => {
 
         <div className="grid md:grid-cols-2 gap-8">
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
+  initial={{ opacity: 0, x: -40 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6 }}
+  className="space-y-6"
+>
+  <div className="glass p-8 rounded-lg border border-primary/20 space-y-6">
+    <h3 className="text-2xl font-bold">Redes Sociais</h3>
+
+    <div className="space-y-4">
+      {[
+        { icon: Mail, label: "Email", value: "pabloftavares460@gmail.com" },
+        { icon: Github, label: "GitHub", value: "github.com/GHOSTPF" },
+        { icon: Linkedin, label: "LinkedIn", value: "https://www.linkedin.com/in/pablo-francisco-b74179247/" },
+        { icon: FaWhatsapp, label: "Whatsapp", value: "(83) 98666-9294" },
+      ].map((social, index) => {
+        const Icon = social.icon;
+        return (
+          <motion.div
+            key={social.label}
+            initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="space-y-6"
+            transition={{ duration: 0.4, delay: index * 0.1 }}
+            className="flex items-center gap-4 p-3 rounded-lg hover:bg-primary/5 transition-colors cursor-pointer"
           >
-            <div className="glass p-8 rounded-lg border border-primary/20 space-y-6">
-              <h3 className="text-2xl font-bold">Redes Sociais</h3>
-              
-              <div className="space-y-4">
-                {[
-                  { icon: Mail, label: "Email", value: "contato@exemplo.com" },
-                  { icon: Github, label: "GitHub", value: "github.com/usuario" },
-                  { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/usuario" },
-                  { icon: Twitter, label: "Twitter", value: "twitter.com/usuario" },
-                ].map((social, index) => {
-                  const Icon = social.icon;
-                  return (
-                    <motion.div
-                      key={social.label}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.4, delay: index * 0.1 }}
-                      className="flex items-center gap-4 p-3 rounded-lg hover:bg-primary/5 transition-colors cursor-pointer"
-                    >
-                      <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                        <Icon className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <div className="font-medium">{social.label}</div>
-                        <div className="text-sm text-muted-foreground">{social.value}</div>
-                      </div>
-                    </motion.div>
-                  );
-                })}
+            <div
+              className="flex-shrink-0 w-11 h-11 rounded-lg bg-gradient-to-br from-primary  flex items-center justify-center shadow-md"
+            >
+              <Icon className="w-5 h-5 text-white" />
+            </div>
+
+            <div className="min-w-0">
+              <div className="font-medium">{social.label}</div>
+              <div className="text-sm text-muted-foreground break-all">
+                {social.value}
               </div>
             </div>
           </motion.div>
+        );
+      })}
+    </div>
+  </div>
+</motion.div>
+
 
           <motion.div
             initial={{ opacity: 0, x: 40 }}
@@ -103,7 +110,7 @@ const Contact = () => {
 
               <Button
                 type="submit"
-                className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity"
+                className="w-full bg-gradient-to-r from-blue-700 to-blue-800 text-white hover:scale-105 transition-all duration-300 ease-in-out"
                 size="lg"
               >
                 Enviar Mensagem

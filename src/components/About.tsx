@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-
+import Foto from "../../public/foto.jpg";
 const About = () => {
   const stats = [
     { value: "5+", label: "Anos de Experiência" },
@@ -31,12 +31,12 @@ const About = () => {
               <div className="relative bg-card border-8 border-card rounded-lg overflow-hidden shadow-2xl rotate-[0deg]">
                 <div className="aspect-[4/3] bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 flex items-center justify-center">
                   <div className="text-center space-y-4 p-8">
-                    <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-6xl font-bold">
-                      👨‍💻
+                    <div className="w-40 h-40 mx-auto rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-6xl font-bold">
+                      <img src={Foto} alt="" style={{borderRadius: 100}} />
                     </div>
                     <div className="space-y-2">
-                      <h3 className="text-2xl font-bold">Seu Nome</h3>
-                      <p className="text-muted-foreground">Full Stack Developer</p>
+                      <h3 className="text-2xl font-bold">Pablo Tavares</h3>
+                      <p className="text-muted-foreground">Programador Full Stack</p>
                     </div>
                   </div>
                 </div>
@@ -44,7 +44,6 @@ const About = () => {
             </div>
           </motion.div>
 
-          {/* Content Side */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -52,7 +51,6 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="space-y-8"
           >
-            {/* Stats */}
             <div className="grid grid-cols-2 gap-4">
               {stats.map((stat, index) => (
                 <motion.div
@@ -71,22 +69,21 @@ const About = () => {
               ))}
             </div>
 
-            {/* Description */}
             <div className="space-y-4 text-muted-foreground">
               <p>
-                Sou um desenvolvedor <span className="text-primary font-semibold">Web & Mobile Full Stack</span> apaixonado 
+                Sou um desenvolvedor <span className="text-primary font-semibold"> Full Stack</span> apaixonado 
                 por criar experiências digitais excepcionais. Minha área de foco nos últimos anos tem sido desenvolvimento 
-                web e mobile com <span className="text-primary font-semibold">React</span>, {" "}
-                <span className="text-primary font-semibold">React Native</span>, {" "}
-                <span className="text-primary font-semibold">TypeScript</span> e {" "}
-                <span className="text-primary font-semibold">Node.js</span> para criar experiências bonitas tanto para 
+                web e mobile com <span className="text-primary font-semibold">React Native</span>, {" "}
+                <span className="text-primary font-semibold">Next</span>, {" "}
+                <span className="text-primary font-semibold">Laravel</span> e {" "}
+                <span className="text-primary font-semibold">Banco de Dados</span> para criar experiências bonitas tanto para 
                 usuários quanto para desenvolvedores que trazem prazer.
               </p>
               <p>
                 Passei a maior parte da minha vida profundamente interessado em tecnologia, construindo continuamente 
                 coisas novas. Como desenvolvedor, sempre fui um nerd clássico de computador, passando a maior parte do 
                 meu tempo mexendo no computador, fazendo uma de 4 coisas: Testando novas tecnologias e descobrindo como 
-                funcionam. Desenvolvendo aplicações web e mobile. E, claro, tomando muito café ☕.
+                funcionam. Desenvolvendo aplicações web e mobile. E, claro, tomando muito café.
               </p>
               <p className="text-foreground font-medium">
                 A maior parte disso ainda é verdade hoje.

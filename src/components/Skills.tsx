@@ -6,9 +6,11 @@ const skillCategories = [
     icon: Code2,
     title: "Frontend",
     skills: [
-      { name: "React/Next.js", level: 95 },
-      { name: "TypeScript", level: 90 },
+      { name: "React/Next.js", level: 80 },
+      { name: "TypeScript", level: 76 },
       { name: "Tailwind CSS", level: 95 },
+      { name: "Angular", level: 70 },
+      { name: "Vue", level: 86 },
     ],
   },
   {
@@ -17,7 +19,8 @@ const skillCategories = [
     skills: [
       { name: "Node.js", level: 90 },
       { name: "PostgreSQL", level: 85 },
-      { name: "APIs REST", level: 92 },
+      { name: "API's", level: 80 },
+      { name: "PHP / Laravel", level: 92 },
     ],
   },
   {
@@ -25,8 +28,8 @@ const skillCategories = [
     title: "IA & ML",
     skills: [
       { name: "OpenAI/GPT", level: 88 },
-      { name: "TensorFlow", level: 75 },
-      { name: "LangChain", level: 82 },
+      { name: "DeepSeek", level: 80 },
+      { name: "N8n", level: 70 },
     ],
   },
   {
@@ -36,6 +39,7 @@ const skillCategories = [
       { name: "Git/GitHub", level: 93 },
       { name: "Docker", level: 80 },
       { name: "CI/CD", level: 85 },
+      { name: "Figma", level: 85 },
     ],
   },
 ];

@@ -2,25 +2,35 @@ import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
+import BarberAgenda from "../../public/barber_agenda.png";
+import BabyBolha from "../../public/babybolha.png";
+import Funasa from "../../public/funasa.png";
 
 const projects = [
   {
-    title: "AI SaaS Platform",
-    description: "Plataforma completa de IA com chat, geração de imagens e análise de dados",
-    tech: ["React", "Node.js", "OpenAI", "PostgreSQL"],
-    gradient: "from-blue-500 to-purple-600",
+    title: "Barber Agenda",
+    description:
+      "Plataforma completa de agendamento desenvolvida em Laravel, criada para que barbeiros possam gerenciar e vender seus serviços de forma prática.",
+    tech: ["Laravel", "Livewire", "PHP", "MySQL"],
+    image: BarberAgenda,
+    github: "https://github.com/GHOSTPF/agendamento_barbearia",
+    demo: "https://agendamentomarcos.pablotavaresdev.com.br/login", 
   },
   {
-    title: "E-commerce Inteligente",
-    description: "Loja virtual com recomendações por IA e checkout otimizado",
-    tech: ["Next.js", "Stripe", "TensorFlow", "MongoDB"],
-    gradient: "from-purple-500 to-pink-600",
+    title: "Baby Bolha",
+    description:"Site sobre uma escola de natacação muito bem desenvolvida na cidade de joao pessoa.",
+    tech: ["Next.js", "Typescript", "Tailwind"],
+    image: BabyBolha,
+    github: "https://github.com/GHOSTPF/babybolha",
+    demo: "https://babybolha.vercel.app/",
   },
   {
     title: "Analytics Dashboard",
-    description: "Dashboard em tempo real com visualizações interativas e ML",
-    tech: ["React", "D3.js", "Python", "FastAPI"],
-    gradient: "from-green-500 to-teal-600",
+    description:
+      "Dashboard em tempo real com visualizações interativas e Machine Learning.",
+    tech: ["Laravel", "Livewire", "PostgreSQL", "Volt"],
+    image: Funasa,
+    demo: "https://eleicao.funasasaude.com.br",
   },
 ];
 
@@ -28,6 +38,7 @@ const Projects = () => {
   return (
     <section className="py-20 px-4">
       <div className="container mx-auto">
+        {/* Título da seção */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -43,6 +54,7 @@ const Projects = () => {
           </p>
         </motion.div>
 
+        {/* Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <motion.div
@@ -54,22 +66,44 @@ const Projects = () => {
               whileHover={{ y: -8, transition: { duration: 0.2 } }}
             >
               <Card className="glass border-primary/20 overflow-hidden group cursor-pointer h-full">
-                <div className={`h-48 bg-gradient-to-br ${project.gradient} relative`}>
+                {/* Imagem do projeto */}
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500"
+                  />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+
+                  {/* Ícones (GitHub e Demo) */}
                   <div className="absolute top-4 right-4 flex gap-2">
-                    <div className="w-8 h-8 rounded-full glass flex items-center justify-center hover:bg-primary/20 transition-colors">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-8 h-8 rounded-full glass flex items-center justify-center hover:bg-primary/20 transition-all duration-300"
+                    >
                       <Github className="w-4 h-4" />
-                    </div>
-                    <div className="w-8 h-8 rounded-full glass flex items-center justify-center hover:bg-primary/20 transition-colors">
+                    </a>
+
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-8 h-8 rounded-full glass flex items-center justify-center hover:bg-primary/20 transition-all duration-300"
+                    >
                       <ExternalLink className="w-4 h-4" />
-                    </div>
+                    </a>
                   </div>
                 </div>
+
+                {/* Conteúdo do card */}
                 <div className="p-6 space-y-4">
                   <h3 className="text-2xl font-bold group-hover:text-gradient transition-colors">
                     {project.title}
                   </h3>
                   <p className="text-muted-foreground">{project.description}</p>
+
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech) => (
                       <Badge key={tech} variant="secondary" className="glass">
