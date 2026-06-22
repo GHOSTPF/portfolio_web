@@ -5,6 +5,10 @@ import { ExternalLink, Github } from "lucide-react";
 import BarberAgenda from "../../public/barber_agenda.png";
 import BabyBolha from "../../public/babybolha.png";
 import Funasa from "../../public/funasa.png";
+import Reforco from "../../public/reforco.png";
+import Laryssa from "../../public/laryssa.png";
+import Kven from "../../public/kven.png";
+import Ecommerce from "../../public/ecommerce.png";
 
 const projects = [
   {
@@ -25,12 +29,47 @@ const projects = [
     demo: "https://babybolha.vercel.app/",
   },
   {
-    title: "Analytics Dashboard",
+    title: "Funasa Saúde",
     description:
-      "Dashboard em tempo real com visualizações interativas e Machine Learning.",
-    tech: ["Laravel", "Livewire", "PostgreSQL", "Volt"],
+      "Sistema de votos internos da Empresa Médica Funasa Saúde.",
+    tech: ["Laravel", "Livewire", "Mysql", "Blade"],
     image: Funasa,
     demo: "https://eleicao.funasasaude.com.br",
+  },
+  {
+    title: "Reforço os Pioneiros",
+    description:
+      "Sistema de Gerenciamento Escolar.",
+    tech: ["Laravel", "React", "PostgreSql", "Blade"],
+    image: Reforco,
+    demo: "https://reforco.pablotavaresdev.com.br",
+  },
+  {
+    title: "Landing Page - Laryssa",
+    description:
+      "Landing page para um lutador de Jiu-jitsu.",
+    tech: ["Next", "Tailwind", "Vite", "TypeScript"],
+    image: Laryssa,
+    github: 'https://github.com/GHOSTPF/laryssa_portfolio',
+    demo: "https://laryssa-portfolio.vercel.app",
+  },
+  {
+    title: "Landing Page - Keven",
+    description:
+      "Landing page para um lutador de Jiu-jitsu.",
+    tech: ["Next", "Tailwind", "Vite", "TypeScript"],
+    image: Kven,
+    github: 'https://github.com/GHOSTPF/kven-portfolio',
+    demo: "https://kven-portfolio.vercel.app/",
+  },
+  {
+    title: "Ecommerce",
+    description:
+      "Ecommerce de vendas sobre varios nichos.",
+    tech: ["Laravel", "Tailwind", "React", "ShadCn"],
+    image: Ecommerce,
+    github: 'https://github.com/GHOSTPF/ecommerce',
+    demo: "https://ecommerce.pablotavaresdev.com.br//",
   },
 ];
 
